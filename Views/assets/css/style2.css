@@ -28,8 +28,7 @@ main {
 
 .form-login {
   height: auto;
-  min-width: 25em;
-  max-width: 30em;
+  width: 30em;
   padding: 20px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 5px;
@@ -43,6 +42,7 @@ main {
 .form-login h3 {
   line-height: 30px;
   padding: 10px 0;
+  margin: 25px 0;
   font-size: 2.2em;
 }
 .form-login p {
@@ -55,20 +55,13 @@ input {
   background-color: transparent !important;
   outline: 0 !important;
   border-color: rgba(255, 255, 255, 0.6) !important;
-  padding: 10px !important;
-  border-left: none !important;
+font-size: 12px;
   color: #fff !important;
 }
 input:focus {
   box-shadow: none !important;
 }
-.input-group-text {
-  background-color: transparent !important;
-  border-color: rgba(255, 255, 255, 0.6) !important;
-  border-right: hidden;
-  color: #fff;
-  font-size: 16px;
-}
+
 
 input[type="checkbox"] {
   background-color: #005ef3 !important;
@@ -79,7 +72,7 @@ input[type="checkbox"] {
 button {
   width: 100%;
   font-weight: normal !important;
-  margin: .5% 0;
+  margin: 1% 0;
 }
 .flex {
     display: flex;
@@ -87,12 +80,6 @@ button {
     align-items: flex-end;
   }
 
-.pass{
-    border-right: none !important;
+label{
+    font-size: 15px;
 }
-  .show{
-   cursor: pointer;
-    border: 1px solid #fff;
-    border-left: none !important;
-
-  }
