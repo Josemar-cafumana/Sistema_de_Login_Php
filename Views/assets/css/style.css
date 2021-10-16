@@ -1,0 +1,46 @@
+*{
+
+    margin: 0;
+    padding: 0;
+}
+.flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to top, rgb(39, 48, 56), rgb(42, 51, 63), rgb(45, 54, 70), rgb(48, 58, 78), rgb(51, 61, 85), rgb(54, 64, 92), rgb(55, 68, 94), rgb(57, 72, 96), rgb(58, 76, 99), rgb(59, 80, 101), rgb(61, 84, 103), rgb(62, 88, 105));
+}
+
+.form-login{
+    height: auto;
+    width: 30em;
+    padding: 20px;
+    background: rgba(0,0,0,.2);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+    backgdrop-filter: blur(10px);
+    color: #fff;
+}
+
+input{
+    background-color: transparent !important;
+    outline: 0 !important;
+    border-color: rgba(255, 255, 255,.6) !important;
+    padding: 10px !important;
+    border-left: none !important;
+   
+}
+
+input[type=checkbox]{
+    background-color:#005EF3 !important;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+button{
+    width: 100%;
+    font-weight: bold !important;
+}
