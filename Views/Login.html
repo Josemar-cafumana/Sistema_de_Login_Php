@@ -6,59 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="assets/images/logo.png">
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="icon" href="assets/images/logo.png" />
     <title>Login</title>
 </head>
 
 <body>
-
-
     <main class="container-fluid d-flex align-items-center justify-content-center">
-
-
         <form class="form-login">
-            <h3>Sign Up</h3>
-            <p>Login to Manage your account</p>
-            <div class="d-grid gap-2 mb-4">
-                <button class="btn btn-danger" type="button">Sign In with Google</button>
-               
-              </div>
+            <h3 class="mb-4">Sign In</h3>
+
+            <div class="d-grid gap-2 mb-3">
+                <button class="btn btn-light" type="button">
+                    <img class="mx-2" width="25" src="assets/images/iconGoogle.svg" />Sign In with Google
+                </button>
+            </div>
+            <div class="text-center">
+                <p>Or</p>
+            </div>
             <div class="input-group mb-4">
                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
+                <input type="email" class="form-control" name="email" id="InputEmail"/>
             </div>
             <div class="input-group mb-4">
                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                <input type="password" class="form-control pass" id="exampleInputPassword1">
+                <input type="password" class="form-control pass" name="password" id="InputPassword" />
                 <span class="input-group-text show">Show</span>
-
             </div>
 
             <div class="mb-4 form-check flex">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" class="form-check-input" name="check" value="Sim" id="exampleCheck1" />
                 <label class="form-check-label" for="exampleCheck1">Remember me</label>
             </div>
-            <div class="mb-4 forgot-password text-end">
-           <a href="#" title="Forgot password" class="text-decoration-none">Forgot Password?</a>
+            <div class="mb-4 asides d-flex justify-content-between">
+                <a href="Register.html" title="Forgot password" class="text-decoration-none">Don't have an account?</a>
+                <a href="Forgot.html" title="Forgot password" class="text-decoration-none">Forgot Password?</a>
             </div>
 
-            <button type="submit" class="btn btn-primary ">Sign in</button>
-
+            <button type="submit" class="btn btn-primary">Sign in</button>
         </form>
-
-
-
     </main>
-
 
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-   
 </body>
 
 </html>
