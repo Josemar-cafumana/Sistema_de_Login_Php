@@ -1,7 +1,7 @@
 <?php $v->layout("__theme"); ?>
 
  
-        <form class="form-login">
+        <form method="POST"  data-action="<?= $router->route("auth.login") ?>" class="form-login">
             <h3 class="mb-4">Sign In</h3>
 
             <div class="d-grid gap-2 mb-3">
@@ -14,11 +14,11 @@
             </div>
             <div class="input-group mb-4">
                 <i class="fas fa-envelope"></i>
-                <input type="email" class="form-control " name="email" id="InputEmail"/>
+                <input type="email" class="form-control input-email" name="Email" id="InputEmail"/>
             </div>
             <div class="input-group mb-4 position-relative">
                 <i class="fas fa-lock"></i>
-                <input type="password" class="form-control pass" name="password" id="InputPassword" />
+                <input type="password" class="form-control pass input-password" name="Password" id="InputPassword" />
                 <p class="show">Show</p>
              
             </div>

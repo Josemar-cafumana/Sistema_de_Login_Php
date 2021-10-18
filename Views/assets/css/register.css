@@ -26,7 +26,7 @@ main {
   );
 }
 
-.form-login {
+.form-register {
   height: auto;
   width: 30em;
   padding: 20px;
@@ -39,7 +39,7 @@ main {
   color: #fff;
 }
 
-.form-login h3 {
+.form-register h3 {
   line-height: 30px;
   padding: 10px 0;
   margin: 25px 0;
@@ -59,4 +59,14 @@ button {
   width: 100%;
   font-weight: normal !important;
   margin: 1% 0;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #303a48 inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #fff !important;
 }
