@@ -1,0 +1,28 @@
+{
+    "name": "josemarcafumana/sistemalogin",
+    "description": "Sistema de login com php7, poo e mvc",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Josemar Cafumana",
+        "email": "rjosemar-cafumana@gmail.com"
+      }
+    ],
+    "config": {
+        "vendor-dir": "App"
+    },
+    "autoload": {
+      "psr-4": {
+        "Source\\": "source/"
+      },
+      "files": [
+        "source/Config.php"
+      ]
+    },
+    "require": {
+      "php": "^7.3",
+      "coffeecode/router": "1.0.*",
+      "league/plates": "v4.0.0-alpha"
+    }
+  }
