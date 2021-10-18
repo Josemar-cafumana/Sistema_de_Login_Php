@@ -50,6 +50,13 @@ class Web
             "title"=>"Reset Password"
         ]);
      }
+     public function error($data){
+
+        echo $this->view->render("Error",[
+            "title"=>"Error Page",
+            "error"=>$data["errcode"]
+        ]);
+     }
     
  
  
