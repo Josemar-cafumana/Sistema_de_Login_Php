@@ -45,41 +45,18 @@ main {
   margin: 25px 0;
   font-size: 2.2em;
 }
-.form-login p {
-  line-height: 30px;
-  padding: 10px 0;
-  font-size: 1em;
-  color: rgb(241 235 235 / 43%);
-}
 input {
   background-color: transparent !important;
   outline: 0 !important;
   border-color: rgba(255, 255, 255, 0.6) !important;
-font-size: 12px;
+  font-size: 12px;
   color: #fff !important;
 }
 input:focus {
   box-shadow: none !important;
 }
-
-
-input[type="checkbox"] {
-  background-color: #005ef3 !important;
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
 button {
   width: 100%;
   font-weight: normal !important;
   margin: 1% 0;
-}
-.flex {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
-
-label{
-    font-size: 15px;
 }

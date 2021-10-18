@@ -56,18 +56,20 @@ main {
   outline: 0 !important;
   border-color: rgba(255, 255, 255, 0.6) !important;
   padding: 10px !important;
-  border-left: none !important;
+  padding-left: 35px !important;
+  padding-right: 58px !important;
   color: #fff !important;
 }
+.input-group i {
+  position: absolute;
+  z-index: 10000;
+  top: 14px;
+  left: 10px;
+  font-size: 18px;
+}
+
 input:focus {
   box-shadow: none !important;
-}
-.input-group-text {
-  background-color: transparent !important;
-  border-color: rgba(255, 255, 255, 0.6) !important;
-  border-right: hidden;
-  color: #fff;
-  font-size: 16px;
 }
 
 input[type="checkbox"] {
@@ -79,49 +81,34 @@ input[type="checkbox"] {
 button {
   width: 100%;
   font-weight: normal !important;
-  margin: .5% 0;
+  margin: 0.5% 0;
 }
 .flex {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-  }
-
-.pass{
-    border-right: none !important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
-  .show{
-   cursor: pointer;
-    border: 1px solid #fff;
-    border-left: none !important;
 
-  }
-  .asides a{
-    color: rgb(241 235 235 / 43%) !important;
-    font-size: 14px;
+.show {
+  cursor: pointer;
+  color: #fff !important;
+  position: absolute;
+  right: 10px;
+}
+.asides a {
+  color: rgb(241 235 235 / 43%) !important;
+  font-size: 14px;
+}
 
-  }
-  hr{
-    
-    width: 100px;
-  }
- .is-invalid{
-   border-color: #dc3545!important;
- }
+.error h1 {
+  font-size: 50pt;
+  text-transform: uppercase;
+  margin: 15px 0;
+  font-weight: bold;
+}
 
- .error h1{
-
-
-font-size: 50pt;
-text-transform: uppercase;
-margin: 15px 0;
-font-weight: bold;
-
- }
-
- .error h3{
-   text-transform: uppercase;
-   font-weight:500;
-   margin: 20px 0;
- }
- 
+.error h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 20px 0;
+}
