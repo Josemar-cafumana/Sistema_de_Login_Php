@@ -16,7 +16,7 @@ $(".form-register").submit((e) => {
        success: function (values) {
            var data = JSON.parse(values);
            
-           console.log(data);
+         
             
     
         if (data.name) {
@@ -62,6 +62,9 @@ $(".form-register").submit((e) => {
             }
             inputConfirm.addClass(data.confpass);
         }
+        if(data.redirect == true){
+            window.location.href = "http://localhost/php/";
+        }
 
    
 
@@ -81,15 +84,20 @@ $(".form-login").submit((e) => {
 
     e.preventDefault();
     var form = $(".form-login");
-    var inputEmail = $(".input-email");
-    var inputPassword = $(".input-password");
+    var errorDiv = $("#alert");
     var url = $(".form-login").data("action");
 
     $.post(url, form.serialize(), function(value) {
 
-        
+        data = JSON.parse(value);
+      
 
-        console.log(value);
+       if(data.message){
+           errorDiv.removeClass('d-none').html(data.message);
+       }else{
+        errorDiv.addClass('d-none');  
+       }
+      
      
        
     });

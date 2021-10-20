@@ -1,12 +1,14 @@
-<?php $v->layout("__theme"); ?>
+<?php $v->layout("__theme");?>
 
- 
-        <form method="POST"  data-action="<?= $router->route("auth.login") ?>" class="form-login">
+
+        <form method="POST"  data-action="<?=$router->route("auth.login")?>" class="form-login">
             <h3 class="mb-4">Sign In</h3>
-
+            <div class="alert alert-danger p-2 d-none" id="alert" role="alert">
+            A simple danger alert—check it out!
+            </div>
             <div class="d-grid gap-2 mb-3">
                 <button class="btn btn-light" type="button">
-                    <img class="mx-2" width="25" src="<?= assets("assets/images/iconGoogle.svg") ?>" />Sign In with Google
+                    <img class="mx-2" width="25" src="<?=assets("assets/images/iconGoogle.svg")?>" />Sign In with Google
                 </button>
             </div>
             <div class="text-center">
@@ -20,7 +22,7 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" class="form-control pass input-password" name="Password" id="InputPassword" />
                 <p class="show">Show</p>
-             
+
             </div>
 
             <div class="mb-4 form-check flex">
@@ -28,10 +30,9 @@
                 <label class="form-check-label" for="exampleCheck1">Remember me</label>
             </div>
             <div class="mb-4 asides d-flex justify-content-between">
-                <a href="<?= $router->route("web.register") ?>" title="Forgot password" class="text-decoration-none">Don't have an account?</a>
-                <a href="<?= $router->route("web.forgot") ?>" title="Forgot password" class="text-decoration-none">Forgot Password?</a>
+                <a href="<?=$router->route("web.register")?>" title="Forgot password" class="text-decoration-none">Don't have an account?</a>
+                <a href="<?=$router->route("web.forgot")?>" title="Forgot password" class="text-decoration-none">Forgot Password?</a>
             </div>
 
             <button type="submit" class="btn btn-primary">Sign in</button>
         </form>
- 

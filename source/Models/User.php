@@ -27,7 +27,7 @@ class User extends Model
             ]);
 
             $this->error["message"] = "Cadastro com sucesso";
-
+            $this->error["redirect"] = true;
             return true;
 
         } else {
@@ -36,7 +36,7 @@ class User extends Model
             $this->validateName();
             $this->validateEmail();
             $this->validatePassword();
-
+            $this->validateConfPass();
             return false;
         }
 
@@ -55,7 +55,8 @@ class User extends Model
 
         if(password_verify($this->getPassword(),$results[0]["password"])){
 
-                $this->error["redirect"] = "home";
+                $this->error["redirect"] = "true";
+                $this->error["success"] = "Logado com sucesso";
             
         }else{
 
@@ -64,7 +65,7 @@ class User extends Model
         
     }else {
             
-          $this->error["message"] = "Dados invalidos";
+          $this->error["message"] = "Digite corretamente os dados";
             return false;
         }
 
@@ -88,8 +89,9 @@ class User extends Model
         $confpass = $this->getConfPassword();
 
         if (empty($confpass) || $confpass !== $this->getPassword()) {
-
+            if($this->getPassword() !== ""){
             $this->error["confpass"] = "is-invalid";
+            }
             return false;
 
         } else {
