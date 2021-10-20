@@ -7,11 +7,18 @@ $(".form-register").submit((e) => {
     var inputConfirm = $(".input-confpass");
     var url = $(".form-register").data("action");
 
+  
 
-    $.post(url, form.serialize(), function (value) {
-
-        var data = JSON.parse(value);
-
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: form.serialize(),
+       success: function (values) {
+           var data = JSON.parse(values);
+           
+           console.log(data);
+            
+    
         if (data.name) {
             if (data.name == "is-valid") {
 
@@ -43,7 +50,7 @@ $(".form-register").submit((e) => {
                 inputPassword.removeClass("is-valid");
             }
 
-            inputPassword.addClass(data.password)
+            inputPassword.addClass(data.password);
         }
         if (data.confpass) {
 
@@ -53,14 +60,21 @@ $(".form-register").submit((e) => {
             } else {
                  inputConfirm.removeClass("is-valid");
             }
-            inputConfirm.addClass(data.confpass)
+            inputConfirm.addClass(data.confpass);
         }
 
-        console.log(data);
+   
 
-    });
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown) { 
+        alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+    }  
 
 });
+
+
+});
+
 
 
 $(".form-login").submit((e) => {
@@ -73,33 +87,11 @@ $(".form-login").submit((e) => {
 
     $.post(url, form.serialize(), function(value) {
 
-        var data = JSON.parse(value);
+        
 
-        if (data.email) {
-
-
-            if (data.email == "is-valid") {
-
-                inputEmail.removeClass("is-invalid");
-            } else {
-                inputEmail.removeClass("is-valid");
-            }
-
-            inputEmail.addClass(data.email);
-        }
-
-        if (data.password) {
-            if (data.password== "is-valid") {
-
-                inputPassword.removeClass("is-invalid");
-            } else {
-                inputPassword.removeClass("is-valid");
-            }
-
-            inputPassword.addClass(data.password)
-        }
-
-        console.log(data);
+        console.log(value);
+     
+       
     });
   
 

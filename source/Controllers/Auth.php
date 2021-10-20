@@ -21,9 +21,10 @@ class Auth
 
         
         $user->save();
+       
         $error = $user->error;
        
-        echo json_encode ($error);
+        echo json_encode($error);
     }
 
     public function login($data){

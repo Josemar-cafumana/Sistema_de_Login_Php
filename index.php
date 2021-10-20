@@ -18,7 +18,7 @@ $router->get("/reset", "Web:reset", "web.reset");
 $router->group(null);
 $router->post("/login", "Auth:login");
 $router->post("/register", "Auth:register", "auth.register");
-$router->post("/forgot", "Auth:forgot");
+$router->post("/forgot", "Auth:forgot", "auth.forgot");
 $router->post("/reset", "Auth:reset");
 
 $router->group("Error");
