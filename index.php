@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once(__DIR__."/App/autoload.php");
 use CoffeeCode\Router\Router;
 

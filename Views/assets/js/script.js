@@ -6,6 +6,7 @@ $(".form-register").submit((e) => {
     var inputPassword = $(".input-password");
     var inputConfirm = $(".input-confpass");
     var url = $(".form-register").data("action");
+    var divEmail = $(".text-email");
 
   
 
@@ -16,6 +17,7 @@ $(".form-register").submit((e) => {
        success: function (values) {
            var data = JSON.parse(values);
            
+          
          
             
     
@@ -65,6 +67,9 @@ $(".form-register").submit((e) => {
         if(data.redirect == true){
             window.location.href = "http://localhost/php/";
         }
+        if(data.message){
+            divEmail.html(data.message);
+        }
 
    
 
@@ -90,13 +95,17 @@ $(".form-login").submit((e) => {
     $.post(url, form.serialize(), function(value) {
 
         data = JSON.parse(value);
-      
 
-       if(data.message){
+      if(data.message){
            errorDiv.removeClass('d-none').html(data.message);
        }else{
         errorDiv.addClass('d-none');  
        }
+
+       if(data.redirect == true){
+        window.location.href = "http://localhost/php/";
+        }
+       
       
      
        

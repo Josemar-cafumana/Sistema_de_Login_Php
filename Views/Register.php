@@ -14,15 +14,15 @@
       </div>
 
       <div class="form-floating mb-3">
-        <input type="email" class="form-control input-email" name="Email" id="floatingInputEmail"  aria-describedby="floatingInputEmail" placeholder="name@example.com">
+        <input type="email" class="form-control input-email" name="Email" id="floatingInputEmail"  aria-describedby="floatingInputEmail" placeholder="name@example.com" required>
         <label for="floatingInputEmail">Email address</label>
-        <div id="floatingInputEmail" class="invalid-feedback text-start">
+        <div id="floatingInputEmail" class="invalid-feedback text-email text-start">
         Informe um endereço de email válido.
       </div>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="password" class="form-control input-password" name="Password" id="floatingInputPassword"  aria-describedby="floatingInputPassword" placeholder="password">
+        <input type="password" class="form-control input-password" name="Password" id="floatingInputPassword"  aria-describedby="floatingInputPassword" placeholder="password" required>
         <label for="floatingInputPassword">Password</label>
         <div id="floatingInputPassword" class="invalid-feedback text-start">
        A palavra passe deve contar pelo menos 8 caracteres.
@@ -30,7 +30,7 @@
       </div>
 
       <div class="form-floating mb-3">
-        <input type="password" class="form-control input-confpass" name="ConfPassword" aria-describedby="floatingInputPassword" id="floatingInputConf" placeholder="Confirm password">
+        <input type="password" class="form-control input-confpass" name="ConfPassword" aria-describedby="floatingInputPassword" id="floatingInputConf" placeholder="Confirm password" required>
         <label for="floatingInputConf">Confirm password</label>
         <div id="floatingInputConf" class="invalid-feedback text-start">
        Confirme a palavra passe.

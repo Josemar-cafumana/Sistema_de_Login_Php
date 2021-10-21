@@ -47,20 +47,20 @@ class User extends Model
 
         if ($this->validateEmail(true) && $this->validatePassword()) {
 
-            echo "<h1>Login com sucesso</h1>";
+          
             $sql = new Sql();
              $results = $sql->select("SELECT * FROM users WHERE email = :email", [
             "email" =>  $this->getEmail(),
                 ]);
 
         if(password_verify($this->getPassword(),$results[0]["password"])){
-
-                $this->error["redirect"] = "true";
+                
+                $this->error["redirect"] = true;
                 $this->error["success"] = "Logado com sucesso";
             
         }else{
 
-            $this->error["message"] = "Digite corretamente os dados";
+            $this->error["message"] = "Email ou senha invalida.";
         }
         
     }else {
@@ -133,6 +133,7 @@ class User extends Model
 
             if (!$login) {
                 $this->error["email"] = "is-invalid";
+                $this->error["message"] = "Este endereço ja foi cadastrado";
 
                 return false;
             } else {
