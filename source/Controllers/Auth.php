@@ -55,5 +55,20 @@ class Auth
 
         echo json_encode($user->error);
     }
+    public function reset($data){
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRING);
+       
+        $user = new User();
+        
+        $user->setData($data);
+
+        $user->reset();
+
+        
+
+        echo json_encode($user->error);
+
+    }
 
 }

@@ -136,3 +136,44 @@ $(".form-forgot").submit((e) => {
 
 
 });
+$(".form-reset").submit((e) => {
+
+    e.preventDefault();
+    var form = $(".form-reset");
+    var errorDiv = $("#alert");
+    var inputPassword = $(".input-password");
+    var inputConfirm = $(".input-confpass");
+    var url = $(".form-reset").data("action");
+
+    $.post(url, form.serialize(), function(values) {
+        
+        var data = JSON.parse(values);
+    console.log(values);
+
+    if (data.password) {
+        if (data.password== "is-valid") {
+
+            inputPassword.removeClass("is-invalid");
+        } else {
+            inputPassword.removeClass("is-valid");
+        }
+
+        inputPassword.addClass(data.password);
+    }
+    if (data.confpass) {
+
+        if (data.confpass== "is-valid") {
+
+             inputConfirm.removeClass("is-invalid");
+        } else {
+             inputConfirm.removeClass("is-valid");
+        }
+        inputConfirm.addClass(data.confpass);
+    }
+    if(data.redirect){
+        window.location.href = "http://localhost/php/login";
+    }
+    });
+
+
+});

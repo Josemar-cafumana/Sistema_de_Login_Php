@@ -21,7 +21,7 @@ $router->group(null);
 $router->post("/login", "Auth:login");
 $router->post("/register", "Auth:register", "auth.register");
 $router->post("/forgot", "Auth:forgot", "auth.forgot");
-$router->post("/reset/{email}/{forget}", "Auth:reset");
+$router->post("/reset", "Auth:reset","auth.reset");
 
 $router->group("Error");
 $router->get("/{errcode}", "Web:error", "web.error");

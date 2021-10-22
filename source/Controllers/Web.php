@@ -2,6 +2,7 @@
 
 namespace Source\Controllers;
 use League\Plates\Engine;
+use Source\Models\User;
 
 class Web
 {
@@ -20,6 +21,7 @@ class Web
 
     public function home(){
 
+        
         echo $this->view->render("home",[
             "title"=>"Home"
         ]);
@@ -51,17 +53,23 @@ class Web
             "title"=>"Forgot"
         ]);
      }
-     public function reset(){
+     public function reset($data){
 
+       
         
-        if(!isset($_SESSION["wforget"])){
+        if(!isset($_SESSION["forget"]) || !filter_var($data["email"], FILTER_VALIDATE_EMAIL) || !filter_var($data["forget"], FILTER_DEFAULT) ){
             header("location: http://localhost/php/login");
-              exit;
-          }else{      
-              echo $this->view->render("Reset",[
+              return;
+          }    
+
+          $user = new User;
+          $user->setData($data);
+             
+          
+          echo $this->view->render("Reset",[
             "title"=>"Reset Password"
-        ]);
-    }
+             ]);
+    
      }
      public function error($data){
 
