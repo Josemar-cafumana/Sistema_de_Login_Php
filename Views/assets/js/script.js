@@ -113,3 +113,26 @@ $(".form-login").submit((e) => {
   
 
 });
+
+$(".form-forgot").submit((e) => {
+
+    e.preventDefault();
+    var form = $(".form-forgot");
+    var errorDiv = $("#alert");
+    var url = $(".form-forgot").data("action");
+
+    $.post(url, form.serialize(), function(value) {
+
+       
+        data = JSON.parse(value);
+
+      if(data.message){
+           errorDiv.removeClass('d-none').html(data.message);
+       }else{
+        errorDiv.addClass('d-none');  
+       }
+
+    });
+
+
+});

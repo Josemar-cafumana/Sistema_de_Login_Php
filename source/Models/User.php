@@ -4,11 +4,21 @@ namespace Source\Models;
 
 use Source\Models\Model;
 use Source\Models\Sql;
+use Source\Models\Email;
+use League\Plates\Engine;
 
 class User extends Model
 {
 
     public $error = [];
+    private $view;
+
+    public function __construct()
+    {
+        $this->view = Engine::create(__DIR__."/../../Views","php");
+
+       
+    }
 
     public function save()
     {
@@ -18,7 +28,7 @@ class User extends Model
         ) {
 
             $sql = new Sql();
-            $sql->query("INSERT INTO users VALUES (null,:name,:email,:password,current_timestamp())", [
+            $sql->query("INSERT INTO users VALUES (null,:name,:email,:password,'',current_timestamp())", [
 
                 ":name" => $this->getName(),
                 ":email" => $this->getEmail(),
@@ -70,6 +80,43 @@ class User extends Model
         }
 
     
+}
+
+public function forgot(){
+   
+    $email = $this->getEmail();
+
+    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $this->error["message"] = "Digite um endereço de email valido";
+        return false;
+    }
+        if($this->validateEmail(true)){
+          
+        $forget = bin2hex(random_bytes(16));
+        $this->error["message"] = "Valido";
+
+        $sql = new Sql();
+        $sql->query("UPDATE users SET forget = :forget WHERE id = :id",[
+            ":forget"=> $forget,
+            ":id"=>$this->getid()
+        ]);
+
+        $_SESSION["forget"] = $this->getid();
+        $body = "<h4>Presado(a) </h4><p>Recebemos em nosso site uma solicitação para recuperar sua senha, por favor, caso não tenha solicitado
+                favor ignore este e-mail. Caso contrário...</p>
+               <p><a href='http://localhost/PHP/reset/$email/$forget' title='Recuperar Senha'>CLIQUE AQUI PARA RECUPERAR SUA SENHA</a></p>
+               <p>Atenciosamente Suporte Block</p>
+               </div>";
+
+        $mail = new Email();
+        $mail->sendEmail($email,"Recuperação de Senha",$body);
+        return true;
+    }else{
+        $this->validateEmail(true);
+        $this->error["message"] = "Este endereço não está cadastrado";
+     
+        return false;
+    }
 }
     public function validatePassword()
     {
@@ -138,6 +185,7 @@ class User extends Model
                 return false;
             } else {
                 $this->error["email"] = "existe na base de dADOS";
+                $this->setData($results[0]);
                 return true;
             }
 

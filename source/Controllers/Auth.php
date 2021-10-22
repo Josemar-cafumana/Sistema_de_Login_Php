@@ -43,4 +43,17 @@ class Auth
 
     }
 
+    public function forgot($data){
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRING);
+       
+        $user = new User();
+        
+        $user->setData($data);
+
+        $user->forgot();
+
+        echo json_encode($user->error);
+    }
+
 }

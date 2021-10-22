@@ -14,14 +14,14 @@ $router->get("/", "Web:home", "web.home");
 $router->get("/login", "Web:login", "web.login");
 $router->get("/register", "Web:register", "web.register");
 $router->get("/forgot", "Web:forgot",  "web.forgot");
-$router->get("/reset", "Web:reset", "web.reset");
+$router->get("/reset/{email}/{forget}", "Web:reset", "web.reset");
 
 
 $router->group(null);
 $router->post("/login", "Auth:login");
 $router->post("/register", "Auth:register", "auth.register");
 $router->post("/forgot", "Auth:forgot", "auth.forgot");
-$router->post("/reset", "Auth:reset");
+$router->post("/reset/{email}/{forget}", "Auth:reset");
 
 $router->group("Error");
 $router->get("/{errcode}", "Web:error", "web.error");
