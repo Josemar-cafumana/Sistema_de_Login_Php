@@ -21,17 +21,24 @@ class Web
     public function home(){
 
         echo $this->view->render("home",[
-            "title"=>"Login"
+            "title"=>"Home"
         ]);
 
     }
     public function login(){
-
+        if(isset($_SESSION["user"])){
+            header("location: http://localhost/php/");
+              exit;
+          }
        echo $this->view->render("Login",[
            "title"=>"Login"
        ]);
     }
     public function register(){
+        if(isset($_SESSION["user"])){
+           header("location: http://localhost/php/");
+             exit;
+         }
 
         echo $this->view->render("Register",[
             "title"=>"Register",
@@ -46,9 +53,15 @@ class Web
      }
      public function reset(){
 
-        echo $this->view->render("Reset",[
+        
+        if(!isset($_SESSION["wforget"])){
+            header("location: http://localhost/php/login");
+              exit;
+          }else{      
+              echo $this->view->render("Reset",[
             "title"=>"Reset Password"
         ]);
+    }
      }
      public function error($data){
 

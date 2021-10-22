@@ -3,7 +3,7 @@
 
         <form method="POST"  data-action="<?=$router->route("auth.login")?>" class="form-login">
             <h3 class="mb-4">Sign In</h3>
-            <div class="alert alert-danger p-2 d-none" id="alert" role="alert">
+            <div class="alert alert-danger p-2 d-none text-center" id="alert" role="alert">
             A simple danger alert—check it out!
             </div>
             <div class="d-grid gap-2 mb-3">

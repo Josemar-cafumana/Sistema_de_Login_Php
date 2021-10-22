@@ -38,6 +38,7 @@ class User extends Model
 
             $this->error["message"] = "Cadastro com sucesso";
             $this->error["redirect"] = true;
+            $_SESSION["user"] = true;
             return true;
 
         } else {
@@ -66,7 +67,9 @@ class User extends Model
         if(password_verify($this->getPassword(),$results[0]["password"])){
                 
                 $this->error["redirect"] = true;
+                $_SESSION["user"] = true;
                 $this->error["success"] = "Logado com sucesso";
+                
             
         }else{
 
