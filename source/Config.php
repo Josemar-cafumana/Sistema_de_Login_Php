@@ -20,3 +20,9 @@ define("GOOGLE",[
 
 
 ]);
+
+function flash($message = null){
+
+    echo "<div class='div'>Logar</div>";
+
+}

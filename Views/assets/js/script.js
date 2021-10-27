@@ -1,3 +1,22 @@
+
+const password = $("#InputPassword");
+const show = $("#show");
+
+show.click(function(){
+
+   if(password.prop('type')== 'password'){
+       password.attr('type','text');
+       show.html("Hide");
+   }else{
+    password.attr('type','password');
+    show.html("Show");
+   }
+});
+ 
+
+
+
+
 $(".form-register").submit((e) => {
     e.preventDefault()
     var form = $(".form-register");
@@ -177,3 +196,4 @@ $(".form-reset").submit((e) => {
 
 
 });
+

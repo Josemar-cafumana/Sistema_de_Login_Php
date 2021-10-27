@@ -16,7 +16,7 @@
 
 <body>
     <main class="container-fluid d-flex align-items-center justify-content-center">
-
+  
     <?= $v->section("content") ?>
 
     </main>

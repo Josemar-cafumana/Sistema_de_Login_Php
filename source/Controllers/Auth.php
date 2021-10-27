@@ -4,9 +4,11 @@ namespace Source\Controllers;
 
 use Source\Models\Sql;
 use Source\Models\User;
+use League\Plates\Engine;
 
 class Auth
 {
+   
 
     public function register($data)
     {
@@ -129,7 +131,6 @@ class Auth
 
         if (!empty($find_by_id)) {
 
-            print_r($find_by_id);
             unset($_SESSION["Google-login"]);
 
             $_SESSION["user"] = $find_by_id[0]["id"];
@@ -139,24 +140,23 @@ class Auth
 
         }
 
-        $find_by_email = $sql->select("SELECT * FROM users WHERE email = :e", [
-            ":e" => $googleUser->getEmail(),
+        $find_by_email = $sql->select("SELECT * FROM users WHERE email = :email", [
+            ":email" => $googleUser->getEmail(),
         ]);
 
         if (!empty($find_by_email)) {
 
             var_dump($find_by_email);
             // Redirecionar para Home
-            echo "<h1>Fazer Login</h1>";
+            $_SESSION["Message"] = "Faça seu login para integrar com o Google";
+            
             header("Location: http://localhost/PHP/login");
             return;
 
         }
-
+        $_SESSION["Message"] = "Faça seu Registro para integrar com o Google";
         header("Location: http://localhost/PHP/register");
-// SE JA TEM UMA CONTA FAÇA LOGIN OU fAÇA UM REGISTRO
 
-// Google user
 
     }
 
@@ -165,7 +165,7 @@ class Auth
         $sql = new Sql();
 
         $google = unserialize($_SESSION["Google-login"]);
-
+        unset($_SESSION["Google-login"]);
         if ($email == $google->getEmail()) {
 
             $sql->query("UPDATE users SET google_id = :id WHERE email = :email", [

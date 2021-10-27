@@ -8,7 +8,7 @@
 
                 <i class="fas fa-lock"></i>
                 <input type="password" class="form-control input-password" id="InputPassword" name="Password" aria-describedby="emailHelp"
-                    placeholder="New password">
+                    placeholder="New password" required>
                     <div id="InputPassword" class="invalid-feedback text-start">
        A palavra passe deve contar pelo menos 8 caracteres.
       </div>
@@ -18,7 +18,7 @@
 
                 <i class="fas fa-lock"></i>
                 <input type="password" class="form-control input-confpass" id="inputConfPassword" name="ConfPassword" aria-describedby="emailHelp"
-                    placeholder="Confirm new password">
+                    placeholder="Confirm new password" required>
                     <div id="InputConfPassword" class="invalid-feedback text-start">
        Confirme a palavra passe.
       </div>

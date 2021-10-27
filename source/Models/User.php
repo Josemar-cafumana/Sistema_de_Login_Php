@@ -37,7 +37,7 @@ class User extends Model
 
             $this->error["message"] = "Cadastro com sucesso";
             $this->error["redirect"] = true;
-            $_SESSION["user"] = true;
+            $_SESSION["user"] = $this->getid();
             return true;
 
         } else {
@@ -65,7 +65,7 @@ class User extends Model
             if (password_verify($this->getPassword(), $results[0]["password"])) {
 
                 $this->error["redirect"] = true;
-                $_SESSION["user"] = true;
+                $_SESSION["user"] = $this->getid();
                 $this->error["success"] = "Logado com sucesso";
 
             } else {
@@ -231,6 +231,17 @@ class User extends Model
             }
         }
 
+    }
+
+    public function listAll(){
+
+        $sql = new Sql();
+
+        $results = $sql->select("SELECT * FROM users WHERE id = :id",[
+            ":id"=>$_SESSION["user"]
+        ]);
+
+        return $results[0];
     }
 
 }

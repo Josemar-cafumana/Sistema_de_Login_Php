@@ -3,6 +3,11 @@
 
         <form method="POST"  data-action="<?=$router->route("auth.login")?>" class="form-login">
             <h3 class="mb-4">Sign In</h3>
+            <?php if(isset($_SESSION["Message"])): ?>
+                <div class="div"> <?php echo $_SESSION["Message"] ?> </div>
+             <?php endif;
+                        unset($_SESSION["Message"]);
+             ?>   
             <div class="alert alert-danger p-2 d-none text-center" id="alert" role="alert">
             A simple danger alert—check it out!
             </div>
@@ -16,14 +21,17 @@
             </div>
             <div class="input-group mb-4">
                 <i class="fas fa-envelope"></i>
-                <input type="email" class="form-control input-email" name="Email" id="InputEmail"/>
+                <input type="email" class="form-control input-email" name="Email" id="InputEmail" required/>
             </div>
             <div class="input-group mb-4 position-relative">
                 <i class="fas fa-lock"></i>
-                <input type="password" class="form-control pass input-password" name="Password" id="InputPassword" />
-                <p class="show">Show</p>
+                <input type="password" class="form-control pass input-password" name="Password" id="InputPassword" required />
+                <p class="show" id="show">Show</p>
 
             </div>
+
+            
+           
 
             <div class="mb-4 form-check flex">
                 <input type="checkbox" class="form-check-input" name="check" value="Sim" id="exampleCheck1" />

@@ -36,6 +36,12 @@
        Confirme a palavra passe.
       </div>
       </div>
+      <?php if(isset($_SESSION["Message"])): ?>
+                <div class="div"> <?php echo $_SESSION["Message"] ?> </div>
+             <?php endif; 
+             unset($_SESSION["Message"]);
+             ?>   
+           
 
 
 

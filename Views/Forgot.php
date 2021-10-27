@@ -11,7 +11,7 @@
 
                <i class="fas fa-envelope"></i>
                 <input type="email" class="form-control " id="exampleInputEmail1" name="Email" aria-describedby="emailHelp"
-                    placeholder="Email adress">
+                    placeholder="Email adress" required>
                 
             </div>
 

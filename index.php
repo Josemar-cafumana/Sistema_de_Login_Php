@@ -15,7 +15,7 @@ $router->get("/login", "Web:login", "web.login");
 $router->get("/register", "Web:register", "web.register");
 $router->get("/forgot", "Web:forgot",  "web.forgot");
 $router->get("/reset/{email}/{forget}", "Web:reset", "web.reset");
-
+$router->get("/sair", "Web:sair", "web.sair");
 
 $router->group(null);
 $router->post("/login", "Auth:login");

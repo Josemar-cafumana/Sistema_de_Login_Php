@@ -45,6 +45,17 @@ main {
   margin: 25px 0;
   font-size: 2.2em;
 }
+.div{
+  position: absolute !important;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -2%);
+  background-color: rgba(255, 255, 255);
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+
+}
 input {
   background-color: transparent !important;
   outline: 0 !important;

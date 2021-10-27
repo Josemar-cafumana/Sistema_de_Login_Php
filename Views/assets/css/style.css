@@ -95,6 +95,18 @@ button {
   color: #fff !important;
   position: absolute;
   right: 10px;
+  z-index: 1111111;
+}
+.div{
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, -2%);
+  background-color: rgba(255, 255, 255);
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+
 }
 .asides a {
   color: rgb(241 235 235 / 43%) !important;
