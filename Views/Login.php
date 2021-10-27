@@ -7,9 +7,9 @@
             A simple danger alert—check it out!
             </div>
             <div class="d-grid gap-2 mb-3">
-                <button class="btn btn-light" type="button">
+                <a href="<?= $router->route("auth.google"); ?>" class="btn btn-light" >
                     <img class="mx-2" width="25" src="<?=assets("assets/images/iconGoogle.svg")?>" />Sign In with Google
-                </button>
+                </a>
             </div>
             <div class="text-center">
                 <p>Or</p>

@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 session_start();
 
 require_once(__DIR__."/App/autoload.php");
@@ -23,6 +23,10 @@ $router->post("/register", "Auth:register", "auth.register");
 $router->post("/forgot", "Auth:forgot", "auth.forgot");
 $router->post("/reset", "Auth:reset","auth.reset");
 
+
+$router->group(null);
+$router->get("/login/google", "Auth:google", "auth.google");
+
 $router->group("Error");
 $router->get("/{errcode}", "Web:error", "web.error");
 
@@ -34,3 +38,6 @@ $router->dispatch();
 if($router->error()){
     $router->redirect("/Error/{$router->error()}");
 }
+
+
+ob_end_flush();

@@ -27,7 +27,7 @@ class User extends Model
         ) {
 
             $sql = new Sql();
-            $sql->query("INSERT INTO users VALUES (null,:name,:email,:password,'',current_timestamp())", [
+            $sql->query("INSERT INTO users VALUES (null,:name,:email,:password,'','',current_timestamp())", [
 
                 ":name" => $this->getName(),
                 ":email" => $this->getEmail(),

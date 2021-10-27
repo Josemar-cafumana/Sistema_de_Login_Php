@@ -21,6 +21,7 @@ class Web
 
     public function home(){
 
+     // session_destroy();
         
         echo $this->view->render("home",[
             "title"=>"Home"
@@ -32,6 +33,7 @@ class Web
             header("location: http://localhost/php/");
               exit;
           }
+         
        echo $this->view->render("Login",[
            "title"=>"Login"
        ]);
@@ -41,6 +43,7 @@ class Web
            header("location: http://localhost/php/");
              exit;
          }
+   
 
         echo $this->view->render("Register",[
             "title"=>"Register",
